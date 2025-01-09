@@ -17,7 +17,7 @@ class Profile
 
   private array $segments;
 
-  private ?Interests $interests;
+  private ?array $interests;
 
   private Consents $consents;
 
@@ -29,7 +29,7 @@ class Profile
 
   private ?Meta $meta;
 
-  public function __construct(string $id, array $ids, Metadata $metadata, Stats $stats, Traits $traits, array $segments, ?Interests $interests, Consents $consents, bool $active, Aux $aux, Data $data, ?Meta $meta)
+  public function __construct(string $id, array $ids, Metadata $metadata, Stats $stats, Traits $traits, array $segments, ?array $interests, Consents $consents, bool $active, Aux $aux, Data $data, ?Meta $meta)
   {
     $this->id = $id;
     $this->ids = $ids;
@@ -94,9 +94,9 @@ class Profile
   }
 
   /**
-   * @return \Tracardi\TracardiPhpSdk\Model\Profile\Interests
+   * @return array
    */
-  public function getInterests(): ?Interests
+  public function getInterests(): ?array
   {
     return $this->interests;
   }
